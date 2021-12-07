@@ -1,0 +1,40 @@
+version: "3.7"
+services:
+    php:
+        build: './php/'
+        volumes:
+            - "../:/usr/local/apache2/htdocs"
+        networks: 
+            - backend
+        working_dir: "/usr/local/apache2/htdocs"
+    apache:
+        build: './apache/'
+        volumes: 
+            - "../:/usr/local/apache2/htdocs"
+            - "./sites:/usr/local/apache2/conf/sites"
+        ports: 
+            - 80:80
+        networks: 
+            - frontend
+            - backend
+        depends_on: 
+            - php
+            - mysql
+    mysql:
+        image: mysql:5.6.40
+        volumes:
+            - mysql-volume:/var/lib/mysql
+        ports: 
+            - 3306:3306
+        networks: 
+            - backend
+        environment:
+            TZ: "America/New_York"
+            MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+            MYSQL_ROOT_PASSWORD: "rahmanz"
+            MYSQL_DATABASE: 'erpdb'
+networks: 
+    backend:
+    frontend:
+volumes: 
+    mysql-volume:
