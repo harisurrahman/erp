@@ -1,0 +1,27 @@
+$theme: #1AACA7;
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+
+body {background: $theme;}
+.btn-primary { background: $theme !important; }
+.form-group {margin: 10px 0 10px 0}
+
+.flexLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    width: 120px;
+    border-radius: 60px;
+    background: white;
+    margin: auto;
+    margin-bottom: 20px;;
+}
+
+.flexBox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
