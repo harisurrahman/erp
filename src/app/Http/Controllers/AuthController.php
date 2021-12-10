@@ -14,19 +14,20 @@ class AuthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function login(Request $request)
-    {
+    { //die('Here');
         $request->validate([
             "email" => ["required", "email"],
             "password" => ["required"]
         ]);
         $user = User::where("email", $request->input('email'))->first();
 
-        if($user){  
+        if($user){
             if(Hash::check($request->password, $user->password)){
                 $token = $user->createToken("create_my_app_token")->plainTextToken;
                 return response(["message" => ["user"=>$user, "token"=> $token]]);
             }
         }
+        return response(["message" => "Invalid user or password"]);
 
     }
 
@@ -37,7 +38,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
-    {   
+    {
     }
 
     /**
