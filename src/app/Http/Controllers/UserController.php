@@ -9,6 +9,7 @@ use Illuminate\Validation\Rules\Password;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+
 class UserController extends Controller
 {
     /**
@@ -18,6 +19,9 @@ class UserController extends Controller
      */
     public function index()
     {   //die( 'test');
+        $user = User::where("email", 'harisur.rahman@gmail.com')->first();
+        dd($user);
+
         $permission = Permission::create(["name" => "user administration"]);
         $role = Role::findByName('admin');
         //$role->givePermissionTo($permission);

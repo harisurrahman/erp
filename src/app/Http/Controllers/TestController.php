@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
-
-class RoleController extends Controller
+class TestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
+        //Role::create(['name'=>'user']);
     }
 
     /**
@@ -36,12 +35,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name'=>'required|min:5'
-        ]);
-        
-        $role = Role::create(["name"=>$request->name]);
-        response($role, 201);
+        //
     }
 
     /**
