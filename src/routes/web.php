@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/', [\App\Http\Controllers\TestController::class, 'index']);
 
-Route::get('/', function () {
+/* Route::get('/', function () {
 
-    return Auth::user();;
-});
+    return view('welcome');
+}); */
+Route::get('/', [TestController::class, 'index']);

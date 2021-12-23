@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5da649a-15c7-4131-9dc1-a3b3a719c24a" name="Default Changelist" comment="" />
+    <list default="true" id="b5da649a-15c7-4131-9dc1-a3b3a719c24a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../docker-config/php/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-config/php/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -183,6 +188,8 @@
       <workItem from="1639276911512" duration="3663000" />
       <workItem from="1639282505357" duration="4173000" />
       <workItem from="1639354637167" duration="1428000" />
+      <workItem from="1639705316123" duration="34000" />
+      <workItem from="1639705351401" duration="28000" />
     </task>
     <servers />
   </component>

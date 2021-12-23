@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\helpers\DateUtls;
+use App\Models\CartOfAccount;
 use Illuminate\Http\Request;
 
-class TestController extends Controller
+class ChartOfAccountController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,14 +14,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        //Auth::user();
-        //Role::create(['name'=>'user']);
-        $format = DateUtls::isValidDate('10/25/2021');
-        dd($format);
-        //$date = Date('m-d-Y', '25/11/2021');
-        //dd(config('erp.date_format'));
-        //$cd = date_format($date, 'Y-m-d');
-        //dd($date);
+        //
     }
 
     /**
@@ -48,10 +41,10 @@ class TestController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -59,10 +52,10 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -71,10 +64,10 @@ class TestController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -82,10 +75,10 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CartOfAccount $cartOfAccount)
     {
         //
     }
