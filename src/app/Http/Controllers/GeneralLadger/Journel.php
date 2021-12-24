@@ -1,12 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\GeneralLadger;
 
-use App\Models\CartOfAccount;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class ChartOfAccountController extends Controller
+class Journel extends Controller
 {
+    private $system;
+
+    public function __construct()
+    {
+        //$this->setting = new Settings();
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +23,9 @@ class ChartOfAccountController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        $ChartOfAc = User::getChartOfAccounts(Auth::user()->id);
+        return response([compact("ChartOfAc", "user")]);
     }
 
     /**
@@ -41,10 +52,10 @@ class ChartOfAccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(CartOfAccount $cartOfAccount)
+    public function show($id)
     {
         //
     }
@@ -52,10 +63,10 @@ class ChartOfAccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(CartOfAccount $cartOfAccount)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +75,10 @@ class ChartOfAccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CartOfAccount $cartOfAccount)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +86,10 @@ class ChartOfAccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CartOfAccount $cartOfAccount)
+    public function destroy($id)
     {
         //
     }

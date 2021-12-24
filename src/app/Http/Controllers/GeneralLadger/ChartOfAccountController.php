@@ -1,21 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\GeneralLadger;
 
-use App\Models\User;
+use App\Models\CartOfAccount;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class Journel extends Controller
+class ChartOfAccountController extends Controller
 {
-    private $system;
-
-
-    public function __construct()
-    {
-        //$this->setting = new Settings();
-
-    }
     /**
      * Display a listing of the resource.
      *
@@ -23,9 +15,7 @@ class Journel extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $ChartOfAc =User::getChartOfAccounts(Auth::user()->id);
-        return response([compact("ChartOfAc", "user")]);
+        //
     }
 
     /**
@@ -52,10 +42,10 @@ class Journel extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -63,10 +53,10 @@ class Journel extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -75,10 +65,10 @@ class Journel extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, CartOfAccount $cartOfAccount)
     {
         //
     }
@@ -86,10 +76,10 @@ class Journel extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(CartOfAccount $cartOfAccount)
     {
         //
     }
