@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\helpers\DateUtls;
+use App\helpers\Settings;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller
 {
@@ -14,10 +17,18 @@ class TestController extends Controller
      */
     public function index()
     {
-        //Auth::user();
+        //return response( Auth::user()->email);
         //Role::create(['name'=>'user']);
-        $format = DateUtls::isValidDate('10/25/2021');
-        dd($format);
+        $system = new Settings();
+        $dateFormat = $system->getDateFormat();
+        $user = Auth::user();
+
+
+        $ChartOfAc =User::getChartOfAccounts(Auth::user()->id);
+        return response([compact("ChartOfAc", "user"), ]);
+        //dd($dateFormat);
+        //$format = DateUtls::isValidDate('10/25/2021');
+        //dd($format);
         //$date = Date('m-d-Y', '25/11/2021');
         //dd(config('erp.date_format'));
         //$cd = date_format($date, 'Y-m-d');

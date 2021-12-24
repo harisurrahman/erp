@@ -2,45 +2,51 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class AuthController extends Controller
+class Journel extends Controller
 {
+    private $system;
+
+
+    public function __construct()
+    {
+        //$this->setting = new Settings();
+
+    }
     /**
-     * Display User assentials and tocken
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(Request $request)
+    public function index()
     {
-
-
-        $request->validate([
-            "email" => ["required", "email"],
-            "password" => ["required"]
-        ]);
-        $user = User::where("email", $request->input('email'))->first();
-
-        if($user){
-            if(Hash::check($request->password, $user->password)){
-                $token = $user->createToken("create_my_app_token")->plainTextToken;
-                return response(compact("user", "token"));
-            }
-        }
-        return response(["message" => "Invalid user or password"], 401);
-
+        $user = Auth::user();
+        $ChartOfAc =User::getChartOfAccounts(Auth::user()->id);
+        return response([compact("ChartOfAc", "user")]);
     }
 
     /**
-     * Remove the specified token from storage.
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function logout(Request $request)
+    public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -50,6 +56,17 @@ class AuthController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }

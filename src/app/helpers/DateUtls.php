@@ -12,7 +12,6 @@ class DateUtls
         $system = System::find(1);
         $defaults = json_decode($system->defaults);
         $DateFormat = $defaults->date_format;
-        //dd($DateFormat);
 
         switch ($DateFormat) {
             case "m-d-Y":

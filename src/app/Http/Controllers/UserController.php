@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
-
 
 class UserController extends Controller
 {
@@ -18,7 +17,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   //die( 'test');
+    { //die( 'test');
         $user = User::where("email", 'harisur.rahman@gmail.com')->first();
         dd($user);
 
@@ -38,19 +37,19 @@ class UserController extends Controller
     {
         //dd($request->all());
 
-    //      $request->validate([
-    //         "email" => "email|required",
-    //         "name" => "required",
-    //         'password' => ['required', 'confirmed', Password::min(8)
-    //         ->mixedCase()
-    //         ->letters()
-    //         ->numbers()
-    //         ->symbols()
-    //         ->uncompromised(),]
+        //      $request->validate([
+        //         "email" => "email|required",
+        //         "name" => "required",
+        //         'password' => ['required', 'confirmed', Password::min(8)
+        //         ->mixedCase()
+        //         ->letters()
+        //         ->numbers()
+        //         ->symbols()
+        //         ->uncompromised(),]
 
-    // ]);
+        // ]);
 
-        $user =  User::create([
+        $user = User::create([
             "name" => $request->name,
             "email" => $request->email,
             "password" => Hash::make($request->password),
@@ -71,7 +70,6 @@ class UserController extends Controller
         return ['single record'];
     }
 
-
     /**
      * Update the specified resource in storage.
      *
@@ -81,7 +79,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return ["message"=>"accessed route put"];
+        return ["message" => "accessed route put"];
     }
 
     /**
