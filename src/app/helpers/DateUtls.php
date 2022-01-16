@@ -7,6 +7,10 @@ use Exception;
 class DateUtls
 {
 
+    public function __construct()
+    {
+
+    }
     public static function isValidDate($date)
     {
         $system = System::find(1);
@@ -66,4 +70,5 @@ class DateUtls
         }
 
     }
+
 }

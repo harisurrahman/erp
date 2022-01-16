@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\GeneralLadger;
 
-use App\Models\CartOfAccount;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\CartOfAccount;
+use Facade\FlareClient\Http\Response;
+use Illuminate\Http\Request;
 
 class ChartOfAccountController extends Controller
 {
@@ -23,7 +24,7 @@ class ChartOfAccountController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         //
     }
@@ -42,10 +43,10 @@ class ChartOfAccountController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(CartOfAccount $cartOfAccount)
+    public function show(Request $request)
     {
         //
     }
@@ -53,10 +54,10 @@ class ChartOfAccountController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(CartOfAccount $cartOfAccount)
+    public function edit(Request $request)
     {
         //
     }
@@ -65,10 +66,9 @@ class ChartOfAccountController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CartOfAccount $cartOfAccount)
+    public function update(Request $request)
     {
         //
     }
@@ -76,10 +76,10 @@ class ChartOfAccountController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\CartOfAccount  $cartOfAccount
+      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CartOfAccount $cartOfAccount)
+    public function destroy(Request $request )
     {
         //
     }

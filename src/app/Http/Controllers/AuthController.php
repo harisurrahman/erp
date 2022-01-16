@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\System;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
 
 class AuthController extends Controller
 {
@@ -17,21 +17,27 @@ class AuthController extends Controller
     public function login(Request $request)
     {
 
-
         $request->validate([
             "email" => ["required", "email"],
-            "password" => ["required"]
+            "password" => ["required"],
         ]);
         $user = User::where("email", $request->input('email'))->first();
 
-        if($user){
-            if(Hash::check($request->password, $user->password)){
+        if ($user) {
+            if (Hash::check($request->password, $user->password)) {
                 $token = $user->createToken("create_my_app_token")->plainTextToken;
-                return response(compact("user", "token"));
+                $system = json_decode($this->getSystemSetting());
+
+                return response(compact("user", "token", "system"));
             }
         }
         return response(["message" => "Invalid user or password"], 401);
 
+    }
+
+    private function getSystemSetting()
+    {
+        return System::all()->pluck('defaults')->first();
     }
 
     /**

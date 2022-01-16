@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\helpers\DateUtls;
 use App\helpers\Settings;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -20,12 +19,13 @@ class TestController extends Controller
         //return response( Auth::user()->email);
         //Role::create(['name'=>'user']);
         $system = new Settings();
-        $dateFormat = $system->getDateFormat();
+        $dateFormat = $system->getGlTranNum();
         $user = Auth::user();
+        var_dump($dateFormat);die;
 
-
-        $ChartOfAc =User::getChartOfAccounts(Auth::user()->id);
-        return response([compact("ChartOfAc", "user"), ]);
+        //$ChartOfAc = User::getChartOfAccounts(Auth::user()->id);
+        //return response([compact("ChartOfAc", "user")]);
+        return compact("dateFormat");
         //dd($dateFormat);
         //$format = DateUtls::isValidDate('10/25/2021');
         //dd($format);
