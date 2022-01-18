@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b5da649a-15c7-4131-9dc1-a3b3a719c24a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../src.zip" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/ChartOfAccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/ChartOfAccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/Journel.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/JournelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/JournelController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/DateUtls.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/DateUtls.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/JournelTemp.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers/DateUtls.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2022_01_16_053350_create_tmp_j_r_trans_table.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +208,8 @@
       <workItem from="1642124641907" duration="178000" />
       <workItem from="1642126873920" duration="1000" />
       <workItem from="1642133381241" duration="354000" />
+      <workItem from="1642472085448" duration="5231000" />
+      <workItem from="1642479599343" duration="3616000" />
     </task>
     <servers />
   </component>
@@ -229,17 +227,6 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Http/Controllers/GeneralLadger/JournelController.php</url>
-          <line>41</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

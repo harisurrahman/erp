@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\GeneralLadger;
 
+use App\helpers\Utility;
 use App\Http\Controllers\Controller;
+use App\Models\JournalTemp;
 use App\Models\User;
 use Exception;
-use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -57,35 +58,44 @@ class JournelController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
         $validator = Validator::make($data, [
-            "*.gl_account" => "required",
-            "*.gl_name" => "required",
-            "*.debit" => "required|numeric|min:0",
-            "*.credit" => "required|numeric|min:0",
+            "trans.*.gl_account" => "required",
+            "trans.*.debit" => "required|numeric|min:0",
+            "trans.*.credit" => "required|numeric|min:0",
+            "trDate" => "required|date_format:Y-m-d",
         ],
         );
 
         $validator->validate();
-        $journels = $this->prepareJournel($data);
-        DB::transaction(function ($journels) {
+        $journals = $this->prepareJournel($data);
+        $message = DB::transaction(function () use ($journals) {
             try {
-                DB::insert($journels);
-                return response(["Message: Success", 201]);
+                JournalTemp::insert($journals);
+                return 'success';
+
             } catch (Exception $e) {
-                response("Message: Erroe", 211);
+                return 'error';
             }
         }
+
         );
+        return response($message === "success" ? "Message: success" : "Message: error", $message === "success" ? 200 : 500);
 
     }
 
     private function prepareJournel($data)
     {
+        $transections = $data['trans'];
+        $created = $data["trDate"];
+        $serialObj = Utility::getGlTranNumber();
+        $trno = $serialObj->lastSerial;
+        $prefix = $serialObj->prefix;
+
         $entries = [];
-        foreach ($data as $j) {
-            $user = Auth::user();
-            $entries = ['gl_account' => $j['gl_account'], 'debit' => $j['dedit'], 'credit' => $j['credit'], 'created_by' => $user];
+        foreach ($transections as $t) {
+            $entries[] = ['trno' => "{$prefix}-{$trno}", 'trdate' => $created, 'gl_account' => $t['gl_account'], 'debit' => $t['debit'], 'credit' => $t['credit'], 'created_by' => Auth::user()->id];
         }
         return $entries;
     }

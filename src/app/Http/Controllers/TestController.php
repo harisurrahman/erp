@@ -21,7 +21,7 @@ class TestController extends Controller
         $system = new Settings();
         $dateFormat = $system->getGlTranNum();
         $user = Auth::user();
-        var_dump($dateFormat);die;
+        //var_dump($dateFormat);die;
 
         //$ChartOfAc = User::getChartOfAccounts(Auth::user()->id);
         //return response([compact("ChartOfAc", "user")]);
