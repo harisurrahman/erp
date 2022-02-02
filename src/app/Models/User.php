@@ -7,9 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 use Laravel\Sanctum\HasApiTokens;
-use phpDocumentor\Reflection\Types\Collection;
 use Spatie\Permission\Traits\HasRoles;
-use function MongoDB\BSON\toJSON;
 
 class User extends Authenticatable
 {
@@ -55,8 +53,8 @@ class User extends Authenticatable
             ->join('chart_of_account_permissions', 'chart_of_account_permissions.user_id', '=', 'users.id')
             ->join('chart_of_accounts', 'chart_of_accounts.gl_account', 'chart_of_account_permissions.gl_account')
             ->where('users.id', $id)
-            ->select('chart_of_accounts.gl_account','gl_name', 'gl_group')->get();
-        return collect($coa)->map(function($x){ return (array) $x; })->toArray();
+            ->select('chart_of_accounts.gl_account', 'gl_name', 'gl_group')->get();
+        return collect($coa)->map(function ($x) {return (array) $x;})->toArray();
 
     }
 }
