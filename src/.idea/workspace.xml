@@ -19,9 +19,14 @@
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
     <servers>
-      <server host="localhost" id="dc519578-106c-48e8-b243-39cc53f031cf" name="localhost" use_path_mappings="true">
+      <server host="localhost" id="dc519578-106c-48e8-b243-39cc53f031cf" name="localhost" port="8000" use_path_mappings="true">
         <path_mappings>
           <mapping local-root="$PROJECT_DIR$" remote-root="/usr/local/apache2/htdocs/src" />
+        </path_mappings>
+      </server>
+      <server host="localhost" id="ea7aa635-a942-44a5-acaf-b5dc28421af4" name="localhost (1)" port="8000" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$/public" remote-root="/usr/local/apache2/htdocs/src/public" />
         </path_mappings>
       </server>
     </servers>
@@ -140,6 +145,21 @@
       <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
       <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/namshi/jose" />
+      <path value="$PROJECT_DIR$/vendor/tymon/jwt-auth" />
+      <path value="$PROJECT_DIR$/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/vendor/league/event" />
+      <path value="$PROJECT_DIR$/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="224tSafBNc2hH1I5ngTw6fau3pw" />
@@ -206,6 +226,7 @@
       <workItem from="1642472085448" duration="5231000" />
       <workItem from="1642479599343" duration="3616000" />
       <workItem from="1642823613423" duration="1094000" />
+      <workItem from="1643860720768" duration="2336000" />
     </task>
     <servers />
   </component>
