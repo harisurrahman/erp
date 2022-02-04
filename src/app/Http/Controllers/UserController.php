@@ -37,18 +37,18 @@ class UserController extends Controller
     {
         //dd($request->all());
 
-        $request->validate([
-            "email" => "email|required",
-            "name" => "required",
-            'password' => ['required', 'confirmed', Password::min(8)
-                    ->mixedCase()
-                    ->letters()
-                    ->numbers()
-                    ->symbols()
-                    ->uncompromised()],
+        /* $request->validate([
+        "email" => "email|required",
+        "name" => "required",
+        'password' => ['required', 'confirmed', Password::min(8)
+        ->mixedCase()
+        ->letters()
+        ->numbers()
+        ->symbols()
+        ->uncompromised()],
 
         ]);
-
+         */
         $user = User::create([
             "name" => $request->name,
             "email" => $request->email,
